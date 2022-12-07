@@ -7,10 +7,10 @@
 # These parameters control the simulation
 # ------------------------------------------------------------------------
 Global:
-  outdir     : /home/weinberg/Projects/EXP/examples/Better
+  outdir     : /path/to/Better
   nthrds     : 1
   dtime      : 0.002
-  ldlibdir   : /home/weinberg/.local/lib/user
+  ldlibdir   : /home/user/.local/lib/user
   runtag     : run0
   nsteps     : 100
   multistep  : 8
@@ -41,7 +41,7 @@ Components:
     bodyfile   : disk.bods
     force :
       id : cylinder
-      parameters : {acyl: 0.01, hcyl: 0.001, lmax: 32, mmax: 6, nmax: 32, ncylorder: 8, ncylnx: 256, ncylny: 128, rnum: 200, pnum: 80, tnum: 80, ashift: 0.5, vflag: 0, logr: false, self_consistent: true, npca: 100, pcadiag: true, pcavtk: true, tk_type: Hall}
+      parameters : {acyl: 0.01, hcyl: 0.001, lmax: 32, mmax: 6, nmax: 32, ncylorder: 12, ncylnx: 128, ncylny: 64, rnum: 200, pnum: 80, tnum: 80, ashift: 0.5, vflag: 0, logr: false, density: true, self_consistent: true, npca: 100, pcadiag: true, pcavtk: true, tk_type: Hall}
 #
 # The parameters could be expressed like this, equivalently:
 #
