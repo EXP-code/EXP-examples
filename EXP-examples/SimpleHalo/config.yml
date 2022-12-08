@@ -14,10 +14,9 @@ Global:
   runtag     : run0
   nsteps     : 100
   multistep  : 14
-  dynFracR   : 0.001
-  dynFracV   : 0.01
-  dynFracA   : 0.03
-  dynFracV   : 0.05
+  dynfracV   : 0.01
+  dynfracA   : 0.03
+  dynfracV   : 0.05
   infile     : OUT.run0.chkpt
   VERBOSE    : 0
   cuda       : off
