@@ -1,0 +1,6 @@
+
+# hide the outputs of files
+Binary/*run0*
+Binary/*run1*
+
+DiskHaloA/*run0*

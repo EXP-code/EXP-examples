@@ -1,0 +1,54 @@
+---
+# YAML 1.2
+# See: http://yaml.org for more info.  EXP uses the yaml-cpp library
+# (http://github.com/jbeder/yaml-cpp) for parsing and emitting YAML
+#
+# ------------------------------------------------------------------------
+# These parameters control the simulation
+# ------------------------------------------------------------------------
+Global:
+  outdir     : .
+  ldlibdir   : /Users/mpetersen/lib/user
+  runtag     : run1
+  nsteps     : 1000
+  dtime      : 0.04
+  multistep  : 3
+  dynfracA   : 0.01
+  dynfracV   : 0.01
+  VERBOSE    : 4
+# ------------------------------------------------------------------------
+# This is a sequence of components.  The parameters for the force are
+# now included as a parameter map, rather than a separate file.
+#
+# Each indented stanza beginning with '-' is a component
+# ------------------------------------------------------------------------
+Components:
+  - name       : star
+    parameters : {nlevel: 1, indexing: true}
+    bodyfile   : binary.bods
+    force      : {id : noforce}
+
+# ------------------------------------------------------------------------
+# This is a sequence of outputs
+# ------------------------------------------------------------------------
+Output:
+  - id : outlog
+    parameters : {nint: 10}
+  - id : orbtrace
+    parameters : {norb: 2, name: star, use_acc: true, use_lev: true}
+
+# ------------------------------------------------------------------------
+# This is a sequence of external forces
+# This can be empty (or missing)
+# ------------------------------------------------------------------------
+External:
+  - id : userlogp
+    parameters : {R : 0.1, b : 1., c: 1., v2 : 0.9}
+
+# Currently empty
+
+# ------------------------------------------------------------------------
+# List of interations as name1 : name2 map entries
+# This can be empty (or missing)
+# ------------------------------------------------------------------------
+Interaction:
