@@ -41,7 +41,7 @@ Components:
     bodyfile   : disk.bods
     force :
       id : cylinder
-      parameters : {acyl: 0.01, hcyl: 0.001, lmax: 32, mmax: 6, nmax: 32, ncylorder: 12, ncylnx: 128, ncylny: 64, rnum: 200, pnum: 0, tnum: 80, ashift: 0, vflag: 0, logr: false, density: true, self_consistent: true, npca: 100, pcadiag: true, pcavtk: true, tk_type: Hall}
+      parameters : {acyl: 0.01, hcyl: 0.001, lmaxfid: 32, mmax: 6, nmaxfid: 32, nmax: 12, ncylnx: 128, ncylny: 64, rnum: 200, pnum: 0, tnum: 80, ashift: 0, vflag: 0, logr: false, density: true, self_consistent: true, npca: 100, pcadiag: true, pcavtk: true, tk_type: Hall}
 #
 # The parameters could be expressed like this, equivalently:
 #
