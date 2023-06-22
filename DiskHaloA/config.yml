@@ -39,7 +39,7 @@ Components:
     bodyfile   : disk.bod
     force :
       id : cylinder
-      parameters : {acyl: 1.0, nmax: 32, mmax: 2, hcyl: 0.05, ncylorder: 10, ncylodd: 2, ncylnx: 128, ncylny: 64, density: true}
+      parameters : {acyl: 1.0, nmaxfid: 32, mmax: 2, hcyl: 0.05, nmax: 10, ncylodd: 2, ncylnx: 128, ncylny: 64, density: true}
 #
 # The parameters could be expressed like this, equivalently:
 #

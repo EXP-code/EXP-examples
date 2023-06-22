@@ -10,9 +10,9 @@ always delete the eof cache and build it again.
 Run as follows.  First, change the ldlibdir parameter to point at your
 library install directory.  Then, execute the command:
 
-mpirun -np 6 exp -f config.yml
+`mpirun -np 6 exp -f config.yml`
 
 assuming that you have a machine with 6 cores.  Since config.yml is
 the default, you simply execute the simpler command:
 
-mpirun -np 6 exp
+`mpirun -np 6 exp`
