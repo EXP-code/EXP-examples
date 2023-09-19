@@ -1,9 +1,9 @@
-# Sample data from the *Nbody* example
+# Sample data from the `Nbody` example
 
 We provide a bit of sample output from the example in the directory above for
 use with pyEXP tutorials and for general code testing.
 
-## Contents
+## File description
 
 - The files `OUT.run0.00xxx` are phase-space snapshots in HDF5 format.
 - The `outcoef*` files are the coefficients from the basis function
