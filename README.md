@@ -1,6 +1,6 @@
 # EXP-examples
 
-These three directories provide a full set of N-body initial conditions and configuration files that demonstrate a simulation with EXP.
+These four directories provide some N-body initial conditions, configuration and data files that demonstrate a simulation with EXP.
 
 ## Organization
 
