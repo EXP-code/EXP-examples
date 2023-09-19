@@ -40,6 +40,10 @@ Alternatively, you can premake the cache file using pyEXP as follows:
 
     mpirun python3 make_cyl_basis.py
 
+The disk basis in takes some time to compute, so a precomputed basis is 
+supplied.  However, you can delete the eof cache and build it again for
+testing.
+
 ## Prerun example
 
 The directory `data` contains some snapshots and coefficients for use
