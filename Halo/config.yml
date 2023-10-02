@@ -39,7 +39,7 @@ Components:
         rmax: 1.95
         Lmax: 6
         nmax: 20
-        rs: 0.0667
+        rmapping : 0.0667
         self_consistent: true
         modelname: SLGridSph.model
 
@@ -71,5 +71,5 @@ External:
 Interaction:
 
 # None: only one component
-  
+
 ...

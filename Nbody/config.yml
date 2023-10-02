@@ -33,7 +33,7 @@ Components:
     force :
       id : sphereSL
       parameters : {numr: 2000, rmin: 0.0001, rmax: 1.95, Lmax: 6,
-      nmax: 20, rs: 0.0667, self_consistent: true, modelname:
+      nmax: 20, rmapping: 0.0667, self_consistent: true, modelname:
         SLGridSph.model, pcadiag: true, pcavtk: true, npca: 100, tk_type: Hall}
 
   - name       : star disk
@@ -92,5 +92,5 @@ External:
 # be inverted using the 'allcouples: false' flag in the 'Global' map
 # ------------------------------------------------------------------------
 Interaction:
-  
+
 ...
