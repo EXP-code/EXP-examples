@@ -13,10 +13,11 @@ Global:
   ldlibdir   : /home/someuser/lib/user
   runtag     : run0
   nsteps     : 100
-  multistep  : 14
+  multistep  : 4
   dynfracV   : 0.01
-  dynfracA   : 0.03
-  dynfracV   : 0.05
+  dynfracD   : 0.05
+  dynfracA   : 1.0e30
+  dynfracP   : 1.0e30
   infile     : OUT.run0.chkpt
   VERBOSE    : 4
   cuda       : off
