@@ -8,11 +8,11 @@
 # ------------------------------------------------------------------------
 Global:
   outdir     : .
-  ldlibdir   : /Users/mpetersen/lib/user
+  ldlibdir   : /usr/local/EXP/lib/user
   runtag     : run1
   nsteps     : 1000
   dtime      : 0.04
-  multistep  : 3
+  multistep  : 12
   dynfracA   : 0.01
   dynfracV   : 0.01
   VERBOSE    : 4

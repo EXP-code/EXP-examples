@@ -7,10 +7,9 @@
 # These parameters control the simulation
 # ------------------------------------------------------------------------
 Global:
-  outdir     : /home/someuser/dir
   nthrds     : 1
   dtime      : 0.005
-  ldlibdir   : /home/someuser/lib/user
+  ldlibdir   : /usr/local/EXP/lib/user
   runtag     : run0
   nsteps     : 100
   multistep  : 14
@@ -18,7 +17,7 @@ Global:
   dynfracA   : 0.03
   dynfracV   : 0.05
   infile     : OUT.run0.chkpt
-  VERBOSE    : 0
+  VERBOSE    : 1
   cuda       : off
 
 # ------------------------------------------------------------------------
@@ -42,6 +41,7 @@ Components:
         rmapping : 0.0667
         self_consistent: true
         modelname: SLGridSph.model
+        cachename: halo.cache
 
 # ------------------------------------------------------------------------
 # This is a sequence of outputs
