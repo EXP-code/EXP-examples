@@ -12,3 +12,10 @@ These four directories provide some N-body initial conditions, configuration and
 | Nbody/data  | Example output files for sanity checking and for some of the pyEXP tutorials |
 | Halo        | A modest spherical NFW halo model with no disk, designed to provide a reference simulation for benchmarking the performance of EXP |
 | Cube        | An example of the pedagogical periodic cube model |
+
+
+## References
+
+Please see the EXP [online
+manual](https://exp-docs.readthedocs.io/en/latest/intro/tutorial.html)
+for a tips on using these examples to learn EXP.

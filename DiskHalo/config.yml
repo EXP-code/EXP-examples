@@ -10,7 +10,7 @@ Global:
   outdir     : .
   nthrds     : 1
   dtime      : 0.05
-  ldlibdir   : /home/someuser/lib/user
+  ldlibdir   : /usr/local/EXP/lib/user
   runtag     : run0
   nsteps     : 100
   multistep  : 8
@@ -32,14 +32,14 @@ Components:
     bodyfile   : halo.bod
     force :
       id : sphereSL
-      parameters : {rmax: 9.95}
+      parameters : {rmax: 9.95, cachename: halo.cache}
 
   - name       : star disk
     parameters : {nlevel: 1}
     bodyfile   : disk.bod
     force :
       id : cylinder
-      parameters : {acyl: 1.0, nmaxfid: 32, mmax: 2, hcyl: 0.05, nmax: 10, ncylodd: 2, ncylnx: 128, ncylny: 64, density: true}
+      parameters : {acyl: 1.0, nmaxfid: 32, mmax: 2, hcyl: 0.05, nmax: 10, ncylodd: 2, ncylnx: 128, ncylny: 64, cachename: disk.cache}
 #
 # The parameters could be expressed like this, equivalently:
 #

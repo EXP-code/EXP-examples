@@ -7,12 +7,11 @@
 # These parameters control the simulation
 # ------------------------------------------------------------------------
 Global:
-  outdir     : /home/someuser/dir
   nthrds     : 1
   dtime      : 0.005
-  ldlibdir   : /home/someuser/lib/user
+  ldlibdir   : /usr/local/EXP/lib/user
   runtag     : run0
-  nsteps     : 100
+  nsteps     : 400
   multistep  : 4
   dynfracV   : 0.01
   dynfracD   : 0.05
@@ -49,6 +48,8 @@ Output:
     parameters : {nint: 1000}
   - id : outchkpt
     parameters : {nint: 200}
+  - id : outcoef
+    parameters : {nint: 1, name: cube}
 
 # ------------------------------------------------------------------------
 # This is a sequence of external forces
