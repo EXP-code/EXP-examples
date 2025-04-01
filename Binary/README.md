@@ -2,6 +2,6 @@ A simple simulation of a binary star system, to exercise the code and give some 
 
 Run as follows.  The YAML configuration file is set for the Docker container. If you are using a native build and installation, change the ldlibdir parameter to point at your library install directory.  Then, execute the command: `mpirun -np 1 exp binary.yml`.
 
-There is also an example where the stars no longer feel mutual self-gravity, but instead are evolved in an external logarithmic potential. This may be run using `mpirun -np 1 exp binary.yml`. This example demonstrates `noforce`.
+There is also an example where the stars no longer feel mutual self-gravity, but instead are evolved in an external logarithmic potential. This may be run using `mpirun -np 1 exp logpot.yml`. This example demonstrates `noforce`.
 
 A first exercise to extend these examples would be to instead use the `usermw` module to simulate the orbit of the sun in the MW.
