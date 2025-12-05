@@ -12,7 +12,7 @@ There is also an example where the stars no longer feel mutual self-gravity, but
 
 ## Viewing results
 
-Each example creates a trajectory file names `ORBTRACE.runX` where `X`
+Each example creates a trajectory file named `ORBTRACE.runX` where `X`
 is either `1` or `2`, for `binary.yml` or `logpot.yml`
 respectively. These may be plotted using the command:
 
