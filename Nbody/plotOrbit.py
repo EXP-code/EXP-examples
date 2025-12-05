@@ -49,7 +49,7 @@ if __name__ == "__main__":
     pos = []
     pos.append(data[:, 1:4])    # First object positions
     pos.append(data[:, 7:10])   # Second object positions
-    pos.append(data[:, 13:17])  # Third object positions
+    pos.append(data[:, 13:16])  # Third object positions
     pos.append(data[:, 19:22])  # Fourth object positions
     pos.append(data[:, 25:28])  # Fifth object positions
     
