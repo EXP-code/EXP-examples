@@ -7,7 +7,7 @@ def plot_orbit(positions, title="Orbital Trajectory", save_path=None):
     Plots two orbital trajectories given a list of 3D positions.
 
     Parameters:
-    positions: A list of 3d particle trajectories (x, y, z) positions for N times both trajectories as an list of M ndarrays of shape (N, 6).
+    positions: A list of 3d particle trajectories (x, y, z) positions for N times, as a list of M ndarrays of shape (N, 3).
     title (str): The title of the plot.
     save_path (str): If provided, the plot will be saved to this path.
     """
