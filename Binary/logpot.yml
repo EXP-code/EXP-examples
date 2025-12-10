@@ -15,7 +15,7 @@ Global:
   multistep  : 12
   dynfracA   : 0.01
   dynfracV   : 0.01
-  VERBOSE    : 4
+  VERBOSE    : 1
 # ------------------------------------------------------------------------
 # This is a sequence of components.  The parameters for the force are
 # now included as a parameter map, rather than a separate file.

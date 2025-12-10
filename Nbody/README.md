@@ -48,3 +48,13 @@ testing.
 
 The directory `data` contains some snapshots and coefficients for use
 with the pyEXP tutorials.
+
+## Viewing results
+
+This example creates a trajectory file with selected disk orbits named
+`ORBTRACE.run0`.  These orbits may be plotted using the command:
+
+``` bash
+python3 plotOrbit.py
+```
+
