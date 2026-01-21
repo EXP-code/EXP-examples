@@ -1,5 +1,9 @@
 # Example unit conversion files (Earth–Sun)
 
+## Motivation
+
+Many N-body simulation codes, including EXP, work most efficiently when the gravitational constant G is set to 1 in the simulation units. This directory provides tools and examples for converting physical data (e.g., in CGS or astronomical units) to a scaled unit system where G=1, which simplifies equations of motion and improves numerical stability.
+
 ## This directory contains:
 
 | File | Contents |
