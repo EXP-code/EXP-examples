@@ -109,6 +109,8 @@ def compute_scales(G_old, G_new, s_L, s_V, s_M):
     # Validate G_new is physically meaningful
     if G_new <= 0:
         raise ValueError(f"G_new must be positive (got {G_new}). Zero or negative gravitational constants are not physically meaningful.")
+    if G_old <= 0:
+        raise ValueError(f"G_old must be positive (got {G_old}). Zero or negative gravitational constants are not physically meaningful.")
     
     known = [(s_L is not None), (s_V is not None), (s_M is not None)]
     n_known = sum(known)
