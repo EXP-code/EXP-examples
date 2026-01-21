@@ -7,7 +7,7 @@
 |earth_sun_cgs.txt | two-particle file (Sun + Earth) in CGS units |
 |earth_sun_scaled.txt | expected converted file in scaled units (AU, M_sun, v'=1) |
 | expunits.py | conversion script (compute scales + optional conversion) |
-|README_expunits.md | this file |
+|README.md | this file |
 
 ## Quick reproduction
 
