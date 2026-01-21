@@ -5,7 +5,7 @@ expunits.py
 General unit-scale calculator & optional particle-file converter.
 
 Core relation (general):
-    G_new = G_old * (s_L * s_V^2) / s_M
+    G_new = G_old * s_M / (s_L * s_V^2)
 so
     s_M = s_L * s_V^2 * G_new / G_old
     s_V = sqrt( s_M * G_old / (s_L * G_new) )
