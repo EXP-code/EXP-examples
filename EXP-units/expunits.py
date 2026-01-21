@@ -243,8 +243,8 @@ def compute_and_maybe_convert(args):
             print("s_M =", s_M)
 
         # Print check of G_new
-        G_new_check = (s_L * s_V**2) / (s_M * args.G_old)
-        print("Check: G_new = (s_L s_V^2) / (G_old * s_M) = {:.12g} (requested G_new = {})".format(G_new_check, args.G_new))
+        G_new_check = args.G_old * s_M / (s_L * s_V**2)
+        print("Check: G_new = G_old * s_M / (s_L s_V^2) = {:.12g} (requested G_new = {})".format(G_new_check, args.G_new))
 
     # If infile specified, convert and write
     if args.infile:
