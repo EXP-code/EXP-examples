@@ -44,13 +44,13 @@ Presets:
 Examples:
 
   # Using gadget preset and target new units (L_new = 300 kpc, M_new = 1e12 Msun, want G_new=1)
-  python convert_units_general.py --preset gadget --new-length 300 --new-mass 1e12 --G_new 1 --print-scales
+  python expunits.py --preset gadget --new-length 300 --new-mass 1e12 --G_new 1 --print-scales
 
   # Provide explicit old/new units (length in kpc, mass in Msun, velocity in km/s):
-  python convert_units_general.py --old-length 1 --new-length 300 --old-mass 1 --new-mass 1e12 --G_old 4.5e-06 --G_new 1 --print-scales
+  python expunits.py --old-length 1 --new-length 300 --old-mass 1 --new-mass 1e12 --G_old 4.5e-06 --G_new 1 --print-scales
 
   # Convert a particle file (7 cols) using the scales computed above:
-  python convert_units_general.py --preset bonsai --new-length 300 --new-mass 1e12 --G_new 1 --infile particles.txt --outfile particles_g1.txt
+  python expunits.py --preset bonsai --new-length 300 --new-mass 1e12 --G_new 1 --infile particles.txt --outfile particles_g1.txt
 
 
 Notes and guidance:
