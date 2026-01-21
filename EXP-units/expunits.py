@@ -120,7 +120,7 @@ def compute_scales(G_old, G_new, s_L, s_V, s_M):
         G_check = (s_L * s_V**2) / (G_old * s_M)
         if not math.isfinite(G_check):
             raise ValueError("Computed G_check is not finite.")
-        if abs((G_check - G_new) / abs(G_new)) > 1e-9:
+        if abs((G_check - G_new) / G_new) > 1e-9:
             raise ValueError(f"Inconsistent scales: G_new requested {G_new} but scales give {G_check}.")
         return s_L, s_V, s_M
 
