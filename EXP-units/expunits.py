@@ -208,16 +208,22 @@ def compute_and_maybe_convert(args):
     if args.old_length is not None and args.new_length is not None:
         if args.old_length == 0:
             raise SystemExit("old-length cannot be zero.")
+        if args.new_length == 0:
+            raise SystemExit("new-length cannot be zero.")
         s_L = args.new_length / args.old_length
 
     if args.old_mass is not None and args.new_mass is not None:
         if args.old_mass == 0:
             raise SystemExit("old-mass cannot be zero.")
+        if args.new_mass == 0:
+            raise SystemExit("new-mass cannot be zero.")
         s_M = args.new_mass / args.old_mass
 
     if args.old_velocity is not None and args.new_velocity is not None:
         if args.old_velocity == 0:
             raise SystemExit("old-velocity cannot be zero.")
+        if args.new_velocity == 0:
+            raise SystemExit("new-velocity cannot be zero.")
         s_V = args.new_velocity / args.old_velocity
 
     # Compute missing scale(s)
