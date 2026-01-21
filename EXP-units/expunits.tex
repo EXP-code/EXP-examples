@@ -1,0 +1,128 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{geometry}
+\geometry{margin=1in}
+\begin{document}
+\title{Unit conversion to a system with \(G=1\) for \sc{exp}}
+\author{Martin D. Weinberg/draft}
+\date{\today}
+\maketitle
+\section{Definitions}
+
+Let the original (denoted as \emph{old}) numerical gravitational
+constant be \(G_{\rm old}\). A particle in the old units has numeric
+mass \(m\), position vector \(\mathbf{r}=(x,y,z)\) and velocity vector
+\(\mathbf{v}=(u,v,w)\).  Define unit-scale factors as the number of
+old units contained in one new unit (denoted as \emph{new}):
+\begin{equation}
+  s_L \equiv \frac{L_{\rm new}}{L_{\rm old}},\qquad
+  s_V \equiv \frac{V_{\rm new}}{V_{\rm old}},\qquad
+  s_M \equiv \frac{M_{\rm new}}{M_{\rm old}}.
+  \label{eq:scalefactors}
+\end{equation}
+A numeric quantity in the new units (denoted with a prime) is obtained
+by dividing the old numeric value by the corresponding scale factor:
+\begin{equation}
+  \mathbf{r}'=\frac{\mathbf{r}}{s_L},\qquad
+  \mathbf{v}'=\frac{\mathbf{v}}{s_V},\qquad
+  m'=\frac{m}{s_M}.
+  \label{eq:scaledunits}
+\end{equation}
+Time-scale factor:
+\[
+  s_T \equiv \frac{T_{\rm new}}{T_{\rm old}}=\frac{s_L}{s_V}.
+\]
+
+\section{Dimensional constraint for \(G\) and the core relation}
+
+Dimensional analysis gives \([G]=L\,V^2/M\). Thus numeric values
+transform as
+\[
+  G_{\rm new} = G_{\rm old}\,\frac{s_M}{s_L\,s_V^2}.
+\]
+Requiring \(G_{\rm new}=1\) gives the central constraint
+\[\boxed{ \; s_M = s_L\,s_V^{2}/G_{\rm old}\; }.\]
+
+These formula give my usual recommendation to Gadget users: keep
+length, velocity, and time units the same and scale your mass by
+\(G_{old}\) (see eq. \ref{eq:scaledunits}).
+
+\section{Conversion formulas (apply to each particle)}
+
+Given \((m,\mathbf{r},\mathbf{v})\) in old units:
+\[\boxed{ \; m'=\frac{m}{s_M},\quad \mathbf{r}'=\frac{\mathbf{r}}{s_L},\quad \mathbf{v}'=\frac{\mathbf{v}}{s_V},\quad t'=\frac{t}{s_T}=\frac{t\,s_V}{s_L}\; }.\]
+
+\section{Solve-for formulas (pick any two scales, compute the third)}
+
+From \(s_M = s_L s_V^2 / G_{\rm old}\):
+\begin{itemize}
+\item Given \(s_L\) and \(s_V\):
+  \[s_M = \frac{s_L\,s_V^2}{G_{\rm old}}.\]
+\item Given \(s_L\) and \(s_M\):
+  \[s_V = \sqrt{\frac{s_M G_{\rm old}}{s_L}}.\]
+\item Given \(s_V\) and \(s_M\):
+\[s_L = \frac{s_M G_{\rm old}}{s_V^2}.\]
+\end{itemize}
+\section{Monopole (circular velocity) condition}
+
+Suppose an enclosed mass (in old units) is \(M_{\rm enc}\) inside
+radius \(r_0\) (old units). The old circular speed satisfies
+\[
+  v_{c,{\rm old}}^2=\frac{G_{\rm old}\,M_{\rm enc}}{r_0}.
+\]
+In the new units (where \(G_{\rm new}=1\)), at the same physical
+radius (numerically \(r_0' = r_0/s_L\)) the circular speed squared
+becomes
+\[
+  v_c'^2 = \frac{(M_{\rm enc}/s_M)}{(r_0/s_L)} = \frac{M_{\rm
+      enc}\,s_L}{s_M\,r_0}.
+\]
+Using \(s_M=s_L s_V^2/G_{\rm old}\) this simplifies to
+\[
+  \boxed{ \; v_c'^2 = \frac{G_{\rm old}\,M_{\rm enc}}{s_V^2\,r_0} \; }
+\]
+or equivalently
+\[
+  \boxed{ \; s_V = \sqrt{\frac{G_{\rm old}\,M_{\rm enc}}{v_c'^2\,r_0}}\;. }
+\]
+Hence: if you demand a specific numeric circular speed value \(v_c'\)
+at physical radius \(r_0\), this uniquely determines \(s_V\)
+(independent of \(s_L\)). Once \(s_V\) is set, \(s_M\) follows from
+\(s_M=s_L s_V^2/G_{\rm old}\); if you additionally set a target
+numeric radius \(r_0'\) for \(r_0\), choose \(s_L = r_0/r_0'\).
+
+\section{Summary table}
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{p{0.3\textwidth} p{0.65\textwidth}}
+\hline
+Task & Formula\\
+\hline
+  Core constraint & $s_M = \dfrac{s_L\,s_V^2}{G_{\rm old}}$ \\
+  Convert variables & $r' = r/s_L,\quad v'=v/s_V,\quad m'=m/s_M,\quad t' = t\,s_V/s_L$ \\
+  Solve for $s_M$ & $s_M = \dfrac{s_L\,s_V^2}{G_{\rm old}}$ \\
+  Solve for $s_V$ & $s_V = \sqrt{\dfrac{G_{\rm old}\,s_M}{s_L}}$ \\
+  Solve for $s_L$ & $s_L = \dfrac{G_{\rm old}\,s_M}{s_V^2}$ \\
+  Circular-velocity condition & $s_V = \sqrt{\dfrac{G_{\rm old}\,M_{\rm enc}}{v_c'^2\,r_0}}$ \\
+  Resulting $s_M$ & $s_M = \dfrac{s_L\,s_V^2}{G_{\rm old}} = s_L\,\dfrac{M_{\rm enc}}{v_c'^2\,r_0}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{Usage recipes}
+\begin{itemize}
+\item Pick new length and velocity units directly: specify \(s_L\) and
+  \(s_V\), compute \(s_M = s_L s_V^2/G_{\rm old}\), then rescale
+  particle numbers with the conversion formulas.
+\item If you want \(v_c'=v_*\) at radius \(r_0\) for enclosed old mass
+  \(M_{\rm enc}\): compute \(s_V\) from the circular-velocity formula,
+  pick \(s_L\) (e.g. \(s_L=r_0\) if you want \(r_0'=1\)), then \(s_M\)
+  follows.
+\item If you require a particular old mass \(M_*\) to become \(m'=1\):
+  set \(s_M=M_*\), then choose \(s_L\) (or \(s_V\)) and compute the
+  remaining scale factor.
+\end{itemize}
+\end{document}
