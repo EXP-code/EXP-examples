@@ -106,6 +106,12 @@ def compute_scales(G_old, G_new, s_L, s_V, s_M):
     s_L, s_V, s_M are either floats or None.
     Returns (s_L, s_V, s_M). Raises ValueError if insufficient or inconsistent.
     """
+    # Validate G_new is physically meaningful
+    if G_new <= 0:
+        raise ValueError(f"G_new must be positive (got {G_new}). Zero or negative gravitational constants are not physically meaningful.")
+    if G_old <= 0:
+        raise ValueError(f"G_old must be positive (got {G_old}). Zero or negative gravitational constants are not physically meaningful.")
+    
     known = [(s_L is not None), (s_V is not None), (s_M is not None)]
     n_known = sum(known)
 
@@ -114,7 +120,7 @@ def compute_scales(G_old, G_new, s_L, s_V, s_M):
         G_check = (s_L * s_V**2) / (G_old * s_M)
         if not math.isfinite(G_check):
             raise ValueError("Computed G_check is not finite.")
-        if abs((G_check - G_new) / (abs(G_new) if G_new != 0 else 1.0)) > 1e-9:
+        if abs((G_check - G_new) / G_new) > 1e-9:
             raise ValueError(f"Inconsistent scales: G_new requested {G_new} but scales give {G_check}.")
         return s_L, s_V, s_M
 
