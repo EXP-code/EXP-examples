@@ -31,9 +31,9 @@ We provide a brief derivation of phase-space conversion formulae to convert from
 - ```--G_new 1``` requests that numeric G in the new numeric units equals 1.
 - The script computes ```s_V``` from the relation ```s_M = s_L * s_V^2 * (G_new/G_old)```. Thus ```V_new``` (the new velocity unit) is chosen so that ```v_earth_old / s_V = 1.0```.
 
-## Expected checks
+## Checks
 
-The script prints ```s_L, s_V, s_M```. 
+The script prints the scaling factors ```s_L, s_V, s_M```.
 
 	Expected approximate values: s_L ≈ 1.4959787e13 s_M ≈ 1.98847e33 s_V ≈ 2.978e6 (cm/s per one new velocity unit)
 
