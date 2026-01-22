@@ -17,7 +17,7 @@ We provide a brief derivation of phase-space conversion formulae to convert from
 | expunits.pdf | PDF document produced by: 'pdflatex expunits.tex' |
 |README.md | this file |
 
-## Quick example
+## Example usage
 
 - The Python3 script requires numpy (e.g. pip install numpy)
 - A Gadget example.  From this directory run:  ```python3 expunits.py --preset gadget --new-length 300 --new-mass 1e12 --G_new 1 --print-scales```  The result will be the set of scaling factors: ```s_L = 300.0 s_V = 119.73178358314053 s_M = 100.0``` that you would use to divide your Gadget input to get EXP input.  Note that time scale scaling is ```s_T = s_L/s_V = 2.51```, or one new system time unit is 1/2.51 Gyr
