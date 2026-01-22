@@ -20,10 +20,23 @@ We provide a brief derivation of phase-space conversion formulae to convert from
 ## Example usage
 
 - The Python3 script requires numpy (e.g. pip install numpy)
-- A Gadget example.  From this directory run:  ```python3 expunits.py --preset gadget --new-length 300 --new-mass 1e12 --G_new 1 --print-scales```  The result will be the set of scaling factors: ```s_L = 300.0 s_V = 119.73178358314053 s_M = 100.0``` that you would use to divide your Gadget input to get EXP input.  Note that time scale scaling is ```s_T = s_L/s_V = 2.51```, or one new system time unit is 1/2.51 Gyr
-- To run the Earth-Sun example run: ```python3 expunits.py --old-length 1 --new-length 1.495978707e13 --old-mass 1 --new-mass 1.98847e33 --G_old 6.67430e-8 --G_new 1 --infile earth_sun_cgs.txt --outfile earth_sun_scaled_by_script.txt --print-scales --sci```.  See the details below for more explanation.
+- A Gadget example.  To get a conversion from traditional Gadget units to Milky-Way-like virial units, run:
 
-### Explanation of flags
+      python3 expunits.py --preset gadget --new-length 300 --new-mass 1e12 --G_new 1 --print-scales
+  
+  The output will be the set of scaling factors:
+  
+      s_L = 300.0 s_V = 119.73178358314053 s_M = 100.0
+  
+  that you would use to divide your Gadget input to get EXP input. The unit values use the same physical units as the old values.  Since Gadget length units are kpc and mass units are 1e10 Msun, we specify the new unit values in those physical units. Note that time scale scaling is ```s_T = s_L/s_V = 2.51```, or one new system time unit is 1/2.51 Gyr.  Note that the ```---preset gadget``` flag is a mnenonic for ```--old-length 1 --old-mass 1e10 --G_old 43007.1```.
+  
+## A complete example using the Earth-Sun system
+
+The following command line converts from cgs to a set of natural units where length is AU and mass is in solar masses:
+
+      python3 expunits.py --old-length 1 --new-length 1.495978707e13 --old-mass 1 --new-mass 1.98847e33 --G_old 6.67430e-8 --G_new 1 --infile earth_sun_cgs.txt --outfile earth_sun_scaled_by_script.txt --print-scales --sci
+
+###  Detailed explanation of flags
 
 - ```--old-length 1``` and ```--new-length 1.495978707e13```: Interpret old-length unit = 1 cm, new-length unit = 1 AU = 1.495978707e13 cm, so s_L = new_length / old_length = 1.495978707e13.
 - ```--old-mass 1``` and ```--new-mass 1.98847e33```: Interpret old-mass unit = 1 g, new-mass unit = 1 M_sun = 1.98847e33 g, so s_M = 1.98847e33.
@@ -31,7 +44,7 @@ We provide a brief derivation of phase-space conversion formulae to convert from
 - ```--G_new 1``` requests that numeric G in the new numeric units equals 1.
 - The script computes ```s_V``` from the relation ```s_M = s_L * s_V^2 * (G_new/G_old)```. Thus ```V_new``` (the new velocity unit) is chosen so that ```v_earth_old / s_V = 1.0```.
 
-## Checks
+### Checks
 
 The script prints the scaling factors ```s_L, s_V, s_M```.
 
