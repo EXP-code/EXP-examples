@@ -217,6 +217,8 @@ def compute_and_maybe_convert(args):
             raise SystemExit("old-mass cannot be zero.")
         if args.new_mass == 0:
             raise SystemExit("new-mass cannot be zero.")
+        if args.new_mass == 0:
+            raise SystemExit("new-mass cannot be zero.")
         s_M = args.new_mass / args.old_mass
 
     if args.old_velocity is not None and args.new_velocity is not None:
