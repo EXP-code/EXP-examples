@@ -226,6 +226,8 @@ def compute_and_maybe_convert(args):
             raise SystemExit("old-velocity cannot be zero.")
         if args.new_velocity == 0:
             raise SystemExit("new-velocity cannot be zero.")
+        if args.new_velocity == 0:
+            raise SystemExit("new-velocity cannot be zero.")
         s_V = args.new_velocity / args.old_velocity
 
     # Compute missing scale(s)
