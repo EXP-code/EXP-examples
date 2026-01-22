@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
-"""
-expunits.py
+"""expunits.py
 
-General unit-scale calculator & optional particle-file converter.
+EXP unit-scale calculator & optional particle-file converter.
 
-Core relation (general):
+The core relation:
     G_new = G_old * s_M / (s_L * s_V^2)
-so
+
+leads to three formulae for missing scale factor:
     s_M = s_L * s_V^2 * G_new / G_old
     s_V = sqrt( s_M * G_old / (s_L * G_new) )
     s_L = s_M * G_old / (s_V^2 * G_new)
 
+This script computes the scale factors s_L, s_V, s_M consistent with
+the core relation, given G_old, G_new and any two of the scale
+factors.  That's it.
+
 Command-line usage notes:
+
 - Provide old/new unit definitions in *the same physical units* (e.g. both
   lengths in kpc, both masses in Msun).
 
@@ -57,7 +62,8 @@ Notes and guidance:
 
 - Units must be given in the same physical system for old/new comparisons.
 
-  Example:
+  Examples:
+
   * If you treat lengths in kpc, give both --old-length and --new-length in kpc.
 
   * If you use Msun for mass give both --old-mass and --new-mass in Msun.
@@ -65,7 +71,8 @@ Notes and guidance:
 - If you use a preset (--preset gadget or --preset bonsai) the preset sets
   old-length, old-mass, and G_old unless you override them on the command line.
 
-- The script is defensive:
+- The script needs enough information to compute all three scale factors
+  (s_L, s_V, s_M):
 
   * You must supply at least two old/new pairs (so the third scale can be
     calculated from the G relation)
