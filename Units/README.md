@@ -11,9 +11,11 @@ Many N-body simulation codes, including EXP, work most efficiently when the grav
 |earth_sun_cgs.txt | two-particle file (Sun + Earth) in CGS units |
 |earth_sun_scaled.txt | expected converted file in scaled units (AU, M_sun, v'=1) |
 | expunits.py | conversion script (compute scales + optional conversion) |
+| expunits.tex | description of unit scaling formulae used in the script |
+| expunits.pdf | PDF document produced by: 'pdflatex expunits.tex' |
 |README.md | this file |
 
-## Quick reproduction
+## Quick example
 
 - The Python3 script requires numpy (e.g. pip install numpy).
 
